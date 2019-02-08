@@ -14,6 +14,12 @@ class App extends Component {
                 return ( <h1>Hello World</h1>);
               }
           }/>
+
+          <Route path="/signup" render={
+              () => {
+                return ( <h1>Signup Page</h1>);
+              }
+          }/>
         </div>
       </Router>
     );
