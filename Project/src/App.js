@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Link, NavLink, Redirect} from 'react-router-dom';
 import Route from 'react-router-dom/Route';
+import SignUp from './SignUp';
 
 const User = ({params}) => {
   return (<h1>Welcome User {params.username} </h1>)
@@ -20,6 +21,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
+          <nav>Yo</nav>
           <ul>
             <li>
               <NavLink to="/" exact activeStyle={
@@ -38,12 +40,10 @@ class App extends Component {
               }
           }/>
           <Route path="/signup/" exact render={
-              () => {
-                return ( <h1>Signup Page</h1>);
-              }
+              <SignUp />
           }/>
 
-          <input type="button" value="Sign Up" onClick to="/signup/" />
+          <input type="button" value="Sign Up" />
           
         </div>
       </Router>
