@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+
+// Sign up page
+
 class SignUp extends Component {
     render() {
         return (
