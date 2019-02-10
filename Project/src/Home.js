@@ -40,7 +40,7 @@ class Home extends Component {
 
           </Col>
 
-          <Col>
+          <Col lg={2}>
 
             <Row>
               <Col>
@@ -56,7 +56,7 @@ class Home extends Component {
                   Messages
                 </div>
 
-                <PublicPosts />
+
               </Col>
             </Row>
 
@@ -77,7 +77,10 @@ class PublicPosts extends Component {
 
     render(){
       return (
-        <div style={{width:95 + '%', margin: 0 + " auto"}}>
+        <div className="post-container">
+          <PostPreview />
+          <PostPreview />
+          <PostPreview />
           <PostPreview />
         </div>
       )
@@ -88,8 +91,19 @@ class PublicPosts extends Component {
 function PostPreview(props){
 
   return (
-    <div className="box">
-      alright now ladies, what's cooler, than bein cool?
+    <div className="post-preview">
+
+      <Row>
+        <Col>
+          <div className="px-2">Example Post Title</div>
+        </Col>
+        <Col>
+          <div className="text-right px-2">Example Post Author</div>
+        </Col>
+      </Row>
+
+
+
     </div>
   )
 }
