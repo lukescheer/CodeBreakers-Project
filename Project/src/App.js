@@ -14,14 +14,43 @@ const User = ({params}) => {
 }
 
 class App extends Component {
-  state = {
-    loggedIn:false
+
+  constructor(props){
+    super(props);
+
+    this.state = {
+      loggedIn: false,
+    }
+
   }
 
   signUpHandle = () => {
     this.setState({loggedIn:true})
   }
+
   render() {
+
+    // Change Log In to Log Out when user is signed in,
+    // Do not offer signed-in users to Sign Up
+
+    var loginOpt;
+
+    if (!this.state.loggedIn){
+      loginOpt = <Nav className="mr-right">
+                 <Nav.Link href="/login">Log In</Nav.Link>
+                 <Nav.Link href="/signup">Sign Up</Nav.Link>
+                 </Nav>
+    }
+
+    else{
+      // Not sure how we will be linking to user profiles...
+
+      loginOpt = <Nav className="mr-right">
+                 <Nav.Link href="/me">My Profile</Nav.Link>
+                 <Nav.Link href="/logout">Log Out</Nav.Link>
+                 </Nav>
+    }
+
     return (
       <Router>
         <div className>
@@ -37,10 +66,19 @@ class App extends Component {
 
             <Nav className="mr-auto">
               <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/signup">Sign Up</Nav.Link>
+
+              { /* Search Form */ }
+              <Form inline>
+                <FormControl type="text" placeholder="Search" />
+                <Button type="submit">Search</Button> { /* TODO How to make this actually go somewhere? */ }
+              </Form>
+
             </Nav>
 
-          </Navbar>;
+
+            {loginOpt}
+
+          </Navbar>
 
 
           { /* Horizontal Rule to separate */ }
