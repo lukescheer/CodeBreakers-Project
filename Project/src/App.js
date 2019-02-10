@@ -78,7 +78,7 @@ class App extends Component {
 
             {loginOpt}
 
-          </Navbar>;
+          </Navbar>
 
 
           { /* Horizontal Rule to separate */ }

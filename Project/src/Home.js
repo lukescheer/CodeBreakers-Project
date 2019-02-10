@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Container, Col, Row} from 'react-bootstrap'
+import {Col, Row} from 'react-bootstrap'
 
 
 // Stuff relating to the home page
@@ -11,50 +11,75 @@ class Home extends Component {
     document.title = "CodeBreakers"
   }
 
+  // TODO pass login state here from App.js
+  constructor(props){
+    super(props);
+  }
+
   render() {
     return (
-      <Container>
-        <Row>
+
+      <div style={{height:"100vh"}}>
+        <Row noGutters={true} style={{height:"100vh"}}>
+
           <Col>
+            <div className="text-center">
+              Recommended Posts
+            </div>
 
-          Recommended Posts
-
+            <PublicPosts />
 
           </Col>
 
           <Col>
-          Your Posts
+            <div className="text-center">
+              Your Posts
+            </div>
+
+            <PublicPosts />
 
           </Col>
 
           <Col>
 
             <Row>
-
-            Your Profile
-
+              <Col>
+                <div className="text-center">
+                  Your Profile
+                </div>
+              </Col>
             </Row>
-            
+
             <Row>
-            Messages
+              <Col>
+                <div className="text-center">
+                  Messages
+                </div>
+
+                <PublicPosts />
+              </Col>
             </Row>
 
           </Col>
+
         </Row>
-      </Container>
+      </div>
+
     );
   }
 }
 
 // Class for scrolling lists, used in post lists + messages
-class ScrollingList extends Component {
-    constructor(props){
+class PublicPosts extends Component {
+      constructor(props){
       super(props);
     }
 
     render(){
       return (
-        <h1> scrolling list </h1>
+        <div style={{width:95 + '%', margin: 0 + " auto"}}>
+          <PostPreview />
+        </div>
       )
     }
 }
@@ -63,7 +88,9 @@ class ScrollingList extends Component {
 function PostPreview(props){
 
   return (
-    <h1> post </h1>
+    <div className="box">
+      alright now ladies, what's cooler, than bein cool?
+    </div>
   )
 }
 
