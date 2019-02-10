@@ -4,7 +4,7 @@ import './App.css';
 import { BrowserRouter as Router, Link, Redirect} from 'react-router-dom';
 import {Nav, Navbar, NavDropdown, Form, FormControl, Button} from 'react-bootstrap'
 import Route from 'react-router-dom/Route';
-import SignUp from './SignUp';
+import SignUp from './pages/SignUp';
 import Home from './Home';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
@@ -53,7 +53,7 @@ class App extends Component {
 
     return (
       <Router>
-        <div>
+        <div className>
 
           { /* NavBar Links
              * Bootstrap Navbar objects used here for to make pretty
@@ -86,7 +86,7 @@ class App extends Component {
 
           { /* Path routing for links in navbar */ }
 
-          <div>
+          <div className="router">
             <Route exact path="/" component={Home} />
             <Route exact path="/signup" component={SignUp} />
           </div>
