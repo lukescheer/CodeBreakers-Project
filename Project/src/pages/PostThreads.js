@@ -6,30 +6,49 @@ class PostThread extends Component {
       return (
          <div className="PostThread">
             <h1>Post Thread </h1>
-            <Row> 
-               <Col>
-                  <div className="PostTitle"> 
-                     Post Title
-                  </div>
-               </Col>
-               <Col>
-                  <div className="PostCreator">
-                     Post Creator
-                  </div>
-               </Col>
-            </Row>
+            <Col>
+               <Row> 
+                  <Col>
+                     <div className="text-center"> 
+                        Post Title
+                     </div>
+                  </Col>
+                  <Col>
+                     <div className="text-center">
+                        Post Creator
+                     </div>
+                  </Col>
+               </Row>
 
-            <Row>
-               <div className="InitialPost">
-                  This is the contents of the question
-               </div>   
-            </Row>
+               <Row>
+                  <div className="text-center">
+                     This is the contents of the question
+                  </div>   
+               </Row>
 
-            <Row>
-               <div className="Reply1">
-                  This is the contents of the reply
-               </div>
-            </Row>
+               <Row>
+                  <div className="text-center">
+                     This is the contents of the reply
+                  </div>
+               </Row>
+            </Col>
+
+            <Col lg={2}>
+               <Row>
+                  <Col>
+                     <div className="text-center">
+                        Your Profile
+                     </div>
+                  </Col>
+               </Row>
+               <Row>
+                  <Col>
+                     <div className="text-center">
+                        Messages
+                     </div>
+                  </Col>
+               </Row>
+            </Col>
          </div>
       )
    }
