@@ -7,7 +7,7 @@ class Login extends Component
     constructor()
     {
         super()
-        this.state = 
+        this.state =
         {
             username: '',
             password: '',
@@ -30,13 +30,13 @@ class Login extends Component
             return <Redirect to = '/target_homepage'/>
         }
     }
-    
+
     render() {
         return (
             <div className="Formcenter">
-                
+
                 <h1>Login</h1>
-                
+
                 <form onSubmit={this.handleCheck} className="FormFields">
                     <div className="FormField">
                         <label className="FormField__Lable" htmlFor="username">Username</label>

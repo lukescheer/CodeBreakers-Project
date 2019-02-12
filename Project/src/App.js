@@ -5,8 +5,8 @@ import { BrowserRouter as Router, Link, Redirect} from 'react-router-dom';
 import {Nav, Navbar, NavDropdown, Form, FormControl, Button} from 'react-bootstrap'
 import Route from 'react-router-dom/Route';
 import SignUp from './pages/SignUp';
-//import Login from './pages/Login';
-import Home from './Home';
+import Home from './pages/Home';
+import CreatePost from './pages/CreatePost';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
@@ -47,6 +47,7 @@ class App extends Component {
       // Not sure how we will be linking to user profiles...
 
       loginOpt = <Nav className="mr-right">
+                 <Nav.Link href="/createPost">New Post</Nav.Link>
                  <Nav.Link href="/me">My Profile</Nav.Link>
                  <Nav.Link href="/logout">Log Out</Nav.Link>
                  </Nav>
@@ -54,7 +55,7 @@ class App extends Component {
 
     return (
       <Router>
-        <div className>
+        <div>
 
           { /* NavBar Links
              * Bootstrap Navbar objects used here for to make pretty
@@ -90,7 +91,8 @@ class App extends Component {
           <div className="router">
             <Route exact path="/" component={Home} />
             <Route exact path="/signup" component={SignUp} />
-            {/*<Route exact path="/login" component={Login} />*/}
+            <Route exact path="/createPost" component={CreatePost} />
+            { /*<Route exact path="/login" component={Login} />*/}
           </div>
 
         </div>
