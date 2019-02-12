@@ -93,7 +93,7 @@ function PostPreview(props){
   return (
     <div className="post-preview">
 
-      <Row>
+      <Row className="pt-2">
         <Col>
           <div className="px-2">Example Post Title</div>
         </Col>
