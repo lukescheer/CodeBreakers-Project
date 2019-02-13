@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from "axios";
 
 // Sign up page
 
@@ -27,10 +28,19 @@ class SignUp extends Component {
     }
     handleSubmit(e) {
         e.preventDefault();
-
+        this.putDataToDb();
         console.log('This form was submitted with the data:');
         console.log(this.state);
     }
+
+    putDataToDB = username => {   
+        axios.post("http://localhost:3001/api/putUser", {
+          email: email,
+          username: username,
+          passwordHash: password,
+        });
+      };
+
 
     render() {
         return (

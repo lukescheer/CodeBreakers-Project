@@ -1,14 +1,14 @@
 const mongoose = require("mongoose");
 const express = require("express");
 const logger = require("morgan");
-const Data = require("./data");
+const User = require("./user");
 
 const API_PORT = 3001;
 const app = express();
 const router = express.Router();
 
 // this is our MongoDB database
-const dbRoute = "mongodb+srv://dbAdmin:<team27woohoo!>@codebreakers-tujtz.mongodb.net/test?retryWrites=true"
+const dbRoute = "mongodb+srv://dbAdmin:team27woohoo!@codebreakers-tujtz.mongodb.net/CodeBreakers.Users?retryWrites=true"
 
 // connects our back end code with the database
 mongoose.connect(
@@ -26,18 +26,18 @@ db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
 // this is our get method
 // this method fetches all available data in our database
-router.get("/getData", (req, res) => {
+router.get("/getUser", (req, res) => {
   User.find((err, user) => {
     if (err) return res.json({ success: false, error: err });
-    return res.json({ success: true, data: data });
+    return res.json({ success: true, user: user });
   });
 });
 
 // this is our update method
 // this method overwrites existing data in our database
-router.post("/updateData", (req, res) => {
+router.post("/updateUser", (req, res) => {
   const { id, update } = req.body;
-  Data.findOneAndUpdate(id, update, err => {
+  User.findOneAndUpdate(id, update, err => {
     if (err) return res.json({ success: false, error: err });
     return res.json({ success: true });
   });
@@ -47,7 +47,7 @@ router.post("/updateData", (req, res) => {
 // this method removes existing data in our database
 router.delete("/deleteUser", (req, res) => {
   const { username } = req.body;
-  Data.findOneAndDelete(username, err => {
+  User.findOneAndDelete(username, err => {
     if (err) return res.send(err);
     return res.json({ success: true });
   });
