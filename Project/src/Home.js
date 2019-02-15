@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {Col, Row} from 'react-bootstrap'
-
+import {Col, Row, Nav} from 'react-bootstrap'
+import Route from 'react-router-dom/Route';
+import NavLink from 'react-bootstrap/NavLink';
 
 // Stuff relating to the home page
 
@@ -45,7 +46,7 @@ class Home extends Component {
             <Row>
               <Col>
                 <div className="text-center">
-                  Your Profile
+                  <Nav.Link href="/me">My Profile</Nav.Link>
                 </div>
               </Col>
             </Row>
