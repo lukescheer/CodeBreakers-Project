@@ -15,7 +15,6 @@ class SignUp extends Component {
             email: '',
             username: '',
             password: "",
-            strength: 0,
             suggestions: []
             //agreement: false
         };
@@ -31,7 +30,6 @@ class SignUp extends Component {
         
         this.setState({
             [name]: value,
-            strength: value
         });
     }
     onPasswordChange = (e) => {
@@ -70,10 +68,11 @@ class SignUp extends Component {
                         <label className="FormField__Lable" htmlFor="password">Password</label>
                         <input type="password" id="password" className="FormField__Input" placeholder="Enter Your Password" name="password" value={this.state.password} onChange={this.onPasswordChange} />
                         <ul>
-                            {suggestions.map((s, index) =>
+                            {this.state.suggestions.map((s, index) =>
                                 <li key={index}>{s}</li>
                             )}
                         </ul>
+                        
                     </div>
                     <div className="FormField">
                         <button className="FormField__Button mr-20">Sign Up!</button>
