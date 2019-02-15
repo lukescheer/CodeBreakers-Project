@@ -1,23 +1,39 @@
 import React, {Component} from 'react';
-import {Col, Row} from 'react-bootstrap'
+import {Col, Row, Nav} from 'react-bootstrap'
 
 
 //profile page
 
 class Profile extends Component {
     constructor(props){
-        super(props);
+      super(props);
+        const numPosts = 0;
+      this.state = {  
+        numPosts: 0
+      };
     }
-
+    
     render(){
         return(
             <div style={{height:"150vh"}}>
                 <Row noGutters={true} style={{height:"150vh"}}>
                     <Col>
                         <div className="text-center">
-                            Your Posts
+                            {"Your Posts: " + 0}
+                            
                         </div>
                         <PublicPosts />
+                    </Col>
+                    <Col>
+                        <div className="text-center">
+                            Your Tags
+                        </div>
+                        <TagList />
+                    </Col>
+                    <Col>
+                      <div className="text-center">
+                        <Nav.Link href="/settings">Settings</Nav.Link>
+                      </div>
                     </Col>
                 </Row>
             </div>
@@ -59,10 +75,40 @@ return (
         <div className="text-right px-2">Example Post Author</div>
       </Col>
     </Row>
-
-
-
   </div>
 )
 }
+
+//tag creators
+class TagList extends Component {
+  constructor(props){
+  super(props);
+}
+
+render(){
+  return (
+    <div className="tag-container">
+      <TagPreview />
+      <TagPreview />
+      <TagPreview />
+      <TagPreview />
+    </div>
+  )
+}
+}
+
+function TagPreview(props){
+
+  return (
+    <div className="tag-preview">
+  
+      <Row>
+        <Col>
+          <div className="px-2">Example Tag</div>
+        </Col>
+      </Row>
+    </div>
+  )
+  }
+
 export default Profile

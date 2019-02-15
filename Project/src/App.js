@@ -6,7 +6,8 @@ import {Nav, Navbar, NavDropdown, Form, FormControl, Button} from 'react-bootstr
 import Route from 'react-router-dom/Route';
 import SignUp from './pages/SignUp';
 import Home from './Home';
-import Profile from './pages/Profile'
+import Profile from './pages/Profile';
+import Settings from './pages/Settings';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
@@ -91,6 +92,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/signup" component={SignUp} />
             <Route exact path="/me" component={Profile} />
+            <Route exact path="/settings" component={Settings} />
           </div>
 
         </div>
