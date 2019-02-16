@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Col, Row} from 'react-bootstrap'
+import {Nav, Col, Row} from 'react-bootstrap'
 
 
 // Stuff relating to the home page
@@ -95,7 +95,7 @@ function PostPreview(props){
 
       <Row>
         <Col>
-          <div className="px-2">Example Post Title</div>
+          <Nav.Link href="/postthread">Example Post Title</Nav.Link>
         </Col>
         <Col>
           <div className="text-right px-2">Example Post Author</div>

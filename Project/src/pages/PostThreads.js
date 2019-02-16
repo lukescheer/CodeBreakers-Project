@@ -53,3 +53,4 @@ class PostThread extends Component {
       )
    }
 }
+export default PostThread

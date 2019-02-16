@@ -6,6 +6,7 @@ import {Nav, Navbar, NavDropdown, Form, FormControl, Button} from 'react-bootstr
 import Route from 'react-router-dom/Route';
 import SignUp from './pages/SignUp';
 import Home from './Home';
+import PostThreads from './pages/PostThreads';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
@@ -89,6 +90,7 @@ class App extends Component {
           <div className="router">
             <Route exact path="/" component={Home} />
             <Route exact path="/signup" component={SignUp} />
+            <Route exact path="/postthread" component={PostThreads} />
           </div>
 
         </div>
