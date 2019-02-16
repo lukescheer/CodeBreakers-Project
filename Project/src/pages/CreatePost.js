@@ -36,6 +36,8 @@ class PostForm extends Component {
 
       this.handleInputChange = this.handleInputChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
+
+      this.tags = ["C", "Python", "JavaScript", "Java", "Other Tags"];
     }
 
     handleInputChange(event){
@@ -67,6 +69,20 @@ class PostForm extends Component {
               <Form.Group controlId="formLink">
                 <Form.Label>Link to Code</Form.Label>
                 <Form.Control type="text" placeholder="Github Link" />
+              </Form.Group>
+            </Form.Row>
+
+            <Form.Row>
+              <Form.Group controlId="tags">
+                <Form.Label> Tags </Form.Label>
+                <br />
+
+                { /* Pull checklist values from predefined array */
+                  this.tags.map(name => (
+                    <Form.Check inline label={name} type="checkbox" id={`inline-${name}`}/>
+                  ))
+                }
+
               </Form.Group>
             </Form.Row>
 
