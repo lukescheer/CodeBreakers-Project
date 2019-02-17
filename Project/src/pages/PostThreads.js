@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
-import { Col, Row } from 'react-bootstrap';
+import { Form, Col, Row } from 'react-bootstrap';
+import '../css/PostThreads.css'
+
+function getTags(){
+   var tagList = ["C", "Python", "JavaScript", "Java"]; //TODO: store tags in backend and retrieve them here 
+   return tagList;
+}
 
 class PostThread extends Component {
    render(){
@@ -24,6 +30,99 @@ class PostThread extends Component {
                   <div className="text-center">
                      This is the contents of the question
                   </div>   
+               </Row>
+
+               <Row>
+                  <div class="scrolling-wrapper">
+                  <a href="#home">Home</a>
+                  <a href="#news">News</a>
+                  <a href="#contact">Contact</a>
+                  <a href="#about">About</a>
+                  <a href="#home">Home</a>
+                  <a href="#news">News</a>
+                  <a href="#contact">Contact</a>
+                  <a href="#about">About</a>
+                  <a href="#about">About</a>
+                  <a href="#home">Home</a>
+                  <a href="#news">News</a>
+                  <a href="#contact">Contact</a>
+                  <a href="#about">About</a>
+                  <a href="#about">About</a>
+                  <a href="#home">Home</a>
+                  <a href="#news">News</a>
+                  <a href="#contact">Contact</a>
+                  <a href="#about">About</a>
+                  <a href="#about">About</a>
+                  <a href="#home">Home</a>
+                  <a href="#news">News</a>
+                  <a href="#contact">Contact</a>
+                  <a href="#about">About</a>
+                  <a href="#about">About</a>
+                  <a href="#home">Home</a>
+                  <a href="#news">News</a>
+                  <a href="#contact">Contact</a>
+                  <a href="#about">About</a>
+                  <a href="#about">About</a>
+                  <a href="#home">Home</a>
+                  <a href="#news">News</a>
+                  <a href="#contact">Contact</a>
+                  <a href="#about">About</a>
+                  <a href="#about">About</a>
+                  <a href="#home">Home</a>
+                  <a href="#news">News</a>
+                  <a href="#contact">Contact</a>
+                  <a href="#about">About</a>
+                  <a href="#about">About</a>
+                  <a href="#home">Home</a>
+                  <a href="#news">News</a>
+                  <a href="#contact">Contact</a>
+                  <a href="#about">About</a>
+                  <a href="#about">About</a>
+                  <a href="#home">Home</a>
+                  <a href="#news">News</a>
+                  <a href="#contact">Contact</a>
+                  <a href="#about">About</a>
+                  <a href="#about">About</a>
+                  <a href="#home">Home</a>
+                  <a href="#news">News</a>
+                  <a href="#contact">Contact</a>
+                  <a href="#about">About</a>
+                  <a href="#about">About</a>
+                  <a href="#home">Home</a>
+                  <a href="#news">News</a>
+                  <a href="#contact">Contact</a>
+                  <a href="#about">About</a>
+                  <a href="#about">About</a>
+                  <a href="#home">Home</a>
+                  <a href="#news">News</a>
+                  <a href="#contact">Contact</a>
+                  <a href="#about">About</a>
+                  <a href="#about">About</a>
+                  <a href="#home">Home</a>
+                  <a href="#news">News</a>
+                  <a href="#contact">Contact</a>
+                  <a href="#about">About</a>
+                  <a href="#about">About</a>
+                  <a href="#home">Home</a>
+                  <a href="#news">News</a>
+                  <a href="#contact">Contact</a>
+                  <a href="#about">About</a>
+                  <a href="#about">About</a>
+                  <a href="#home">Home</a>
+                  <a href="#news">News</a>
+                  <a href="#contact">Contact</a>
+                  <a href="#about">About</a>
+                  <a href="#about">About</a>
+                  <a href="#home">Home</a>
+                  <a href="#news">News</a>
+                  <a href="#contact">Contact</a>
+                  <a href="#about">About</a>
+                  <a href="#about">About</a>
+                  <a href="#home">Home</a>
+                  <a href="#news">News</a>
+                  <a href="#contact">Contact</a>
+                  <a href="#about">About</a>
+                  </div>
                </Row>
 
                <Row>
