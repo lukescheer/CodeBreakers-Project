@@ -15,7 +15,7 @@ class PostThread extends Component {
             <Col>
                <Row> 
                   <Col>
-                     <div className="text-center"> 
+                     <div className="title"> 
                         Post Title
                      </div>
                   </Col>
@@ -27,127 +27,112 @@ class PostThread extends Component {
                </Row>
 
                <Row>
-                  <div className="text-center">
+                  <div className="post-contents">
                      This is the contents of the question
+                        <div class="taglist">
+                           <a href="#home">Home</a>
+                           <a href="#news">News</a>
+                           <a href="#contact">Contact</a>
+                           <a href="#about">About</a>
+                           <a href="#home">Home</a>
+                           <a href="#news">News</a>
+                           <a href="#contact">Contact</a>
+                           <a href="#about">About</a>
+                           <a href="#about">About</a>
+                           <a href="#home">Home</a>
+                           <a href="#news">News</a>
+                           <a href="#contact">Contact</a>
+                           <a href="#about">About</a>
+                           <a href="#about">About</a>
+                           <a href="#home">Home</a>
+                           <a href="#news">News</a>
+                           <a href="#contact">Contact</a>
+                           <a href="#about">About</a>
+                           <a href="#about">About</a>
+                           <a href="#home">Home</a>
+                           <a href="#news">News</a>
+                           <a href="#contact">Contact</a>
+                           <a href="#about">About</a>
+                           <a href="#about">About</a>
+                           <a href="#home">Home</a>
+                           <a href="#news">News</a>
+                           <a href="#contact">Contact</a>
+                           <a href="#about">About</a>
+                           <a href="#about">About</a>
+                           <a href="#home">Home</a>
+                           <a href="#news">News</a>
+                           <a href="#contact">Contact</a>
+                           <a href="#about">About</a>
+                           <a href="#about">About</a>
+                           <a href="#home">Home</a>
+                           <a href="#news">News</a>
+                           <a href="#contact">Contact</a>
+                           <a href="#about">About</a>
+                           <a href="#about">About</a>
+                           <a href="#home">Home</a>
+                           <a href="#news">News</a>
+                           <a href="#contact">Contact</a>
+                           <a href="#about">About</a>
+                           <a href="#about">About</a>
+                           <a href="#home">Home</a>
+                           <a href="#news">News</a>
+                           <a href="#contact">Contact</a>
+                           <a href="#about">About</a>
+                           <a href="#about">About</a>
+                           <a href="#home">Home</a>
+                           <a href="#news">News</a>
+                           <a href="#contact">Contact</a>
+                           <a href="#about">About</a>
+                           <a href="#about">About</a>
+                           <a href="#home">Home</a>
+                           <a href="#news">News</a>
+                           <a href="#contact">Contact</a>
+                           <a href="#about">About</a>
+                           <a href="#about">About</a>
+                           <a href="#home">Home</a>
+                           <a href="#news">News</a>
+                           <a href="#contact">Contact</a>
+                           <a href="#about">About</a>
+                           <a href="#about">About</a>
+                           <a href="#home">Home</a>
+                           <a href="#news">News</a>
+                           <a href="#contact">Contact</a>
+                           <a href="#about">About</a>
+                           <a href="#about">About</a>
+                           <a href="#home">Home</a>
+                           <a href="#news">News</a>
+                           <a href="#contact">Contact</a>
+                           <a href="#about">About</a>
+                           <a href="#about">About</a>
+                           <a href="#home">Home</a>
+                           <a href="#news">News</a>
+                           <a href="#contact">Contact</a>
+                           <a href="#about">About</a>
+                           <a href="#about">About</a>
+                           <a href="#home">Home</a>
+                           <a href="#news">News</a>
+                           <a href="#contact">Contact</a>
+                           <a href="#about">About</a>
+                           <a href="#about">About</a>
+                           <a href="#home">Home</a>
+                           <a href="#news">News</a>
+                           <a href="#contact">Contact</a>
+                           <a href="#about">About</a>
+                        </div>
                   </div>   
                </Row>
 
                <Row>
-                  <div class="scrolling-wrapper">
-                  <a href="#home">Home</a>
-                  <a href="#news">News</a>
-                  <a href="#contact">Contact</a>
-                  <a href="#about">About</a>
-                  <a href="#home">Home</a>
-                  <a href="#news">News</a>
-                  <a href="#contact">Contact</a>
-                  <a href="#about">About</a>
-                  <a href="#about">About</a>
-                  <a href="#home">Home</a>
-                  <a href="#news">News</a>
-                  <a href="#contact">Contact</a>
-                  <a href="#about">About</a>
-                  <a href="#about">About</a>
-                  <a href="#home">Home</a>
-                  <a href="#news">News</a>
-                  <a href="#contact">Contact</a>
-                  <a href="#about">About</a>
-                  <a href="#about">About</a>
-                  <a href="#home">Home</a>
-                  <a href="#news">News</a>
-                  <a href="#contact">Contact</a>
-                  <a href="#about">About</a>
-                  <a href="#about">About</a>
-                  <a href="#home">Home</a>
-                  <a href="#news">News</a>
-                  <a href="#contact">Contact</a>
-                  <a href="#about">About</a>
-                  <a href="#about">About</a>
-                  <a href="#home">Home</a>
-                  <a href="#news">News</a>
-                  <a href="#contact">Contact</a>
-                  <a href="#about">About</a>
-                  <a href="#about">About</a>
-                  <a href="#home">Home</a>
-                  <a href="#news">News</a>
-                  <a href="#contact">Contact</a>
-                  <a href="#about">About</a>
-                  <a href="#about">About</a>
-                  <a href="#home">Home</a>
-                  <a href="#news">News</a>
-                  <a href="#contact">Contact</a>
-                  <a href="#about">About</a>
-                  <a href="#about">About</a>
-                  <a href="#home">Home</a>
-                  <a href="#news">News</a>
-                  <a href="#contact">Contact</a>
-                  <a href="#about">About</a>
-                  <a href="#about">About</a>
-                  <a href="#home">Home</a>
-                  <a href="#news">News</a>
-                  <a href="#contact">Contact</a>
-                  <a href="#about">About</a>
-                  <a href="#about">About</a>
-                  <a href="#home">Home</a>
-                  <a href="#news">News</a>
-                  <a href="#contact">Contact</a>
-                  <a href="#about">About</a>
-                  <a href="#about">About</a>
-                  <a href="#home">Home</a>
-                  <a href="#news">News</a>
-                  <a href="#contact">Contact</a>
-                  <a href="#about">About</a>
-                  <a href="#about">About</a>
-                  <a href="#home">Home</a>
-                  <a href="#news">News</a>
-                  <a href="#contact">Contact</a>
-                  <a href="#about">About</a>
-                  <a href="#about">About</a>
-                  <a href="#home">Home</a>
-                  <a href="#news">News</a>
-                  <a href="#contact">Contact</a>
-                  <a href="#about">About</a>
-                  <a href="#about">About</a>
-                  <a href="#home">Home</a>
-                  <a href="#news">News</a>
-                  <a href="#contact">Contact</a>
-                  <a href="#about">About</a>
-                  <a href="#about">About</a>
-                  <a href="#home">Home</a>
-                  <a href="#news">News</a>
-                  <a href="#contact">Contact</a>
-                  <a href="#about">About</a>
-                  <a href="#about">About</a>
-                  <a href="#home">Home</a>
-                  <a href="#news">News</a>
-                  <a href="#contact">Contact</a>
-                  <a href="#about">About</a>
-                  </div>
+                  
                </Row>
 
                <Row>
-                  <div className="text-center">
+                  <div className="reply-contents">
                      This is the contents of the reply
                   </div>
                </Row>
             </Col>
 
-            <Col lg={2}>
-               <Row>
-                  <Col>
-                     <div className="text-center">
-                        Your Profile
-                     </div>
-                  </Col>
-               </Row>
-               <Row>
-                  <Col>
-                     <div className="text-center">
-                        Messages
-                     </div>
-                  </Col>
-               </Row>
-            </Col>
          </div>
       )
    }
