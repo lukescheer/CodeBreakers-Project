@@ -20,7 +20,7 @@ class PostThread extends Component {
                      </div>
                   </Col>
                   <Col>
-                     <div className="text-center">
+                     <div className="author">
                         Post Creator
                      </div>
                   </Col>
@@ -30,100 +30,38 @@ class PostThread extends Component {
                   <div className="post-contents">
                      This is the contents of the question
                         <div class="taglist">
-                           <a href="#home">Home</a>
-                           <a href="#news">News</a>
-                           <a href="#contact">Contact</a>
-                           <a href="#about">About</a>
-                           <a href="#home">Home</a>
-                           <a href="#news">News</a>
-                           <a href="#contact">Contact</a>
-                           <a href="#about">About</a>
-                           <a href="#about">About</a>
-                           <a href="#home">Home</a>
-                           <a href="#news">News</a>
-                           <a href="#contact">Contact</a>
-                           <a href="#about">About</a>
-                           <a href="#about">About</a>
-                           <a href="#home">Home</a>
-                           <a href="#news">News</a>
-                           <a href="#contact">Contact</a>
-                           <a href="#about">About</a>
-                           <a href="#about">About</a>
-                           <a href="#home">Home</a>
-                           <a href="#news">News</a>
-                           <a href="#contact">Contact</a>
-                           <a href="#about">About</a>
-                           <a href="#about">About</a>
-                           <a href="#home">Home</a>
-                           <a href="#news">News</a>
-                           <a href="#contact">Contact</a>
-                           <a href="#about">About</a>
-                           <a href="#about">About</a>
-                           <a href="#home">Home</a>
-                           <a href="#news">News</a>
-                           <a href="#contact">Contact</a>
-                           <a href="#about">About</a>
-                           <a href="#about">About</a>
-                           <a href="#home">Home</a>
-                           <a href="#news">News</a>
-                           <a href="#contact">Contact</a>
-                           <a href="#about">About</a>
-                           <a href="#about">About</a>
-                           <a href="#home">Home</a>
-                           <a href="#news">News</a>
-                           <a href="#contact">Contact</a>
-                           <a href="#about">About</a>
-                           <a href="#about">About</a>
-                           <a href="#home">Home</a>
-                           <a href="#news">News</a>
-                           <a href="#contact">Contact</a>
-                           <a href="#about">About</a>
-                           <a href="#about">About</a>
-                           <a href="#home">Home</a>
-                           <a href="#news">News</a>
-                           <a href="#contact">Contact</a>
-                           <a href="#about">About</a>
-                           <a href="#about">About</a>
-                           <a href="#home">Home</a>
-                           <a href="#news">News</a>
-                           <a href="#contact">Contact</a>
-                           <a href="#about">About</a>
-                           <a href="#about">About</a>
-                           <a href="#home">Home</a>
-                           <a href="#news">News</a>
-                           <a href="#contact">Contact</a>
-                           <a href="#about">About</a>
-                           <a href="#about">About</a>
-                           <a href="#home">Home</a>
-                           <a href="#news">News</a>
-                           <a href="#contact">Contact</a>
-                           <a href="#about">About</a>
-                           <a href="#about">About</a>
-                           <a href="#home">Home</a>
-                           <a href="#news">News</a>
-                           <a href="#contact">Contact</a>
-                           <a href="#about">About</a>
-                           <a href="#about">About</a>
-                           <a href="#home">Home</a>
-                           <a href="#news">News</a>
-                           <a href="#contact">Contact</a>
-                           <a href="#about">About</a>
-                           <a href="#about">About</a>
-                           <a href="#home">Home</a>
-                           <a href="#news">News</a>
-                           <a href="#contact">Contact</a>
-                           <a href="#about">About</a>
-                           <a href="#about">About</a>
-                           <a href="#home">Home</a>
-                           <a href="#news">News</a>
-                           <a href="#contact">Contact</a>
-                           <a href="#about">About</a>
+                           <a>Tag1 </a>
+                           <a>Tag2 </a>
+                           <a>Tag3 </a>
+                           <a>Tag4 </a>
+                           <a>Tag5 </a>
+                           <a>Tag1 </a>
+                           <a>Tag2 </a>
+                           <a>Tag3 </a>
+                           <a>Tag4 </a>
+                           <a>Tag5 </a>
+                           <a>Tag1 </a>
+                           <a>Tag2 </a>
+                           <a>Tag3 </a>
+                           <a>Tag4 </a>
+                           <a>Tag5 </a>
+                           <a>Tag1 </a>
+                           <a>Tag2 </a>
+                           <a>Tag3 </a>
+                           <a>Tag4 </a>
+                           <a>Tag5 </a>
+                           <a>Tag1 </a>
+                           <a>Tag2 </a>
+                           <a>Tag3 </a>
+                           <a>Tag4 </a>
+                           <a>Tag5 </a>
+                           <a>Tag1 </a>
+                           <a>Tag2 </a>
+                           <a>Tag3 </a>
+                           <a>Tag4 </a>
+                           <a>Tag5 </a>
                         </div>
                   </div>   
-               </Row>
-
-               <Row>
-                  
                </Row>
 
                <Row>
