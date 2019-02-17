@@ -71,17 +71,44 @@ class Home extends Component {
 
 // Class for scrolling lists, used in post lists + messages
 class PublicPosts extends Component {
-      constructor(props){
+    constructor(props){
       super(props);
+
+      this.loadPosts();
+    }
+
+    /* TODO get from DB instead of static example */
+    loadPosts() {
+
+      this.posts = [];
+
+      for (var i=1; i<51; i++){
+        this.posts.push(
+          {
+            "title": "Title # " + i,
+            "author": "Author # " + i,
+            "postLink": "post" + i,
+            "authorLink": "author" + i
+          }
+        )
+      }
+
     }
 
     render(){
       return (
         <div className="post-container">
-          <PostPreview />
-          <PostPreview />
-          <PostPreview />
-          <PostPreview />
+          { /* <PostPreview title="Title" author="Author"/> */ }
+
+          {
+            this.posts.map(info =>(
+              <PostPreview title={info.title}
+                           author={info.author}
+                           postLink={info.postLink}
+                           authorLink={info.authorLink} />
+            ))
+          }
+
         </div>
       )
     }
@@ -95,10 +122,13 @@ function PostPreview(props){
 
       <Row className="pt-2">
         <Col>
-          <div className="px-2">Example Post Title</div>
+          <a className="px-2" href={props.postLink}>{props.title}</a>
         </Col>
         <Col>
-          <div className="text-right px-2">Example Post Author</div>
+          { /* Oddly, text won't align without this wrapper */ }
+          <div className="text-right px-2">
+            <a href={props.authorLink}>{props.author}</a>
+          </div>
         </Col>
       </Row>
 
