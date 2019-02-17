@@ -7,6 +7,16 @@ function getTags(){
    return tagList;
 }
 
+function getPostText(){
+   var postText = "This is the text of the post"; //TODO: get post text from db
+   return postText;
+}
+
+function getReplies(){
+   var replyList = ["ReplyText1", "ReplyText2", "ReplyText3"]; //TODO: store replies with post information and retrieve them here
+   return replyList;
+}
+
 class PostThread extends Component {
    render(){
       return (
