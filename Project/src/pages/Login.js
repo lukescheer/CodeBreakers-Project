@@ -28,19 +28,6 @@ class Login extends Component
     }
     handleCheck(e)
     {
-        //console.log("user inputted this data");
-        /*console.log(this.state);
-        noerror: 0;
-        if(noerror == 0)
-        {
-            Popup.alert('Password does not match username')
-        }
-        else
-        {
-            //log the user in
-            //ie switch user to homepage
-            return <Redirect to = '/target_homepage'/>
-        }*/
         e.preventDefault();
 
         console.log('This form was submitted with the data:');
