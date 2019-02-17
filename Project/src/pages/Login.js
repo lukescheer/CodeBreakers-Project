@@ -14,6 +14,7 @@ class Login extends Component
         };
         this.handleCheck = this.handleCheck.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.goBack = this.goBack.bind(this);
     }
 
     handleChange(e) {
@@ -45,6 +46,11 @@ class Login extends Component
         console.log('This form was submitted with the data:');
         console.log(this.state);
     }
+    goBack(e)
+    {
+        e.preventDefault();
+        console.log("go Back");
+    }
     
     render() {
         return (
@@ -64,8 +70,10 @@ class Login extends Component
                     <div className="FormField">
                         <button className="FormField__Button mr-20">Login</button>
                     </div>
-
                 </form>
+                <a href="#" onClick={this.goBack}>
+                Back
+                </a>
             </div>
         );
     }
