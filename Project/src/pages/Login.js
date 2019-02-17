@@ -13,6 +13,17 @@ class Login extends Component
             password: '',
         };
         this.handleCheck = this.handleCheck.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(e) {
+        let target = e.target;
+        let value = target.type === 'checkbox' ? target.checked : target.value;
+        let name = target.name;
+
+        this.setState({
+            [name]: value
+        });
     }
     handleCheck(e)
     {
@@ -29,6 +40,10 @@ class Login extends Component
             //ie switch user to homepage
             return <Redirect to = '/target_homepage'/>
         }*/
+        e.preventDefault();
+
+        console.log('This form was submitted with the data:');
+        console.log(this.state);
     }
     
     render() {
@@ -40,11 +55,11 @@ class Login extends Component
                 <form onSubmit={this.handleCheck} className="FormFields">
                     <div className="FormField">
                         <label className="FormField__Lable" htmlFor="username">Username</label>
-                        <input type="username" id="username" className="FormField__Input" placeholder="Enter Your Username" name="username" value={this.state.username} onChange={this.handleCheck} />
+                        <input type="username" id="username" className="FormField__Input" placeholder="Enter Your Username" name="username" value={this.state.username} onChange={this.handleChange} />
                     </div>
                     <div className="FormField">
                         <label className="FormField__Lable" htmlFor="password">Password</label>
-                        <input type="password" id="password" className="FormField__Input" placeholder="Enter Your Password" name="password" value={this.state.password} onChange={this.handleCheck} />
+                        <input type="password" id="password" className="FormField__Input" placeholder="Enter Your Password" name="password" value={this.state.password} onChange={this.handleChange} />
                     </div>
                     <div className="FormField">
                         <button className="FormField__Button mr-20">Login</button>
