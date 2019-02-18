@@ -124,7 +124,7 @@ function PostPreview(props){
 
       <Row className="pt-2">
         <Col>
-          <a className="px-2" href={props.postLink}>{props.title}</a>
+          <a className="px-2" href={props.postLink}>{props.title} </a>
         </Col>
         <Col>
           { /* Oddly, text won't align without this wrapper */ }

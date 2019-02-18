@@ -100,6 +100,7 @@ class App extends Component {
             <Route exact path="/settings" component={Settings} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/postthread" component={PostThreads} />
+            <Route path="/post1" component={PostThreads} />
           </div>
 
         </div>
