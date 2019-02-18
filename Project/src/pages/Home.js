@@ -4,6 +4,8 @@ import {Col, Row, Nav} from 'react-bootstrap'
 import Route from 'react-router-dom/Route';
 import NavLink from 'react-bootstrap/NavLink';
 
+import '../css/home.css'
+
 // Stuff relating to the home page
 
 class Home extends Component {
@@ -21,8 +23,9 @@ class Home extends Component {
   render() {
     return (
 
-      <div style={{height:"100vh"}}>
-        <Row noGutters={true} style={{height:"100vh"}}>
+
+      <div>
+        <Row noGutters={true} style={{height:"90vh"}}>
 
           <Col>
             <div className="text-center">
