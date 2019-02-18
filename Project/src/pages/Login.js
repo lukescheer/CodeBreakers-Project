@@ -2,6 +2,20 @@ import React, { Component } from 'react';
 //import Popup from "reactjs.popup";
 import { Redirect } from 'react-router-dom';
 //user login
+/*class Popup extends React.Component
+{
+    render()
+    {
+      return (
+        <div className='popup'>
+          <div className='popup_inner'>
+            <h1>{this.props.text}</h1>
+          <button onClick={this.props.closePopup}>close</button>
+          </div>
+        </div>
+      );
+    }
+  }*/
 class Login extends Component
 {
     constructor()
@@ -11,12 +25,18 @@ class Login extends Component
         {
             username: '',
             password: '',
+            //showPopup = false,
         };
         this.handleCheck = this.handleCheck.bind(this);
         this.handleChange = this.handleChange.bind(this);
-        this.goBack = this.goBack.bind(this);
+        //this.goBack = this.goBack.bind(this);
     }
-
+    togglePopup()
+    {
+        this.setState({
+          showPopup: !this.state.showPopup
+        });
+      }
     handleChange(e) {
         let target = e.target;
         let value = target.type === 'checkbox' ? target.checked : target.value;
@@ -29,15 +49,15 @@ class Login extends Component
     handleCheck(e)
     {
         e.preventDefault();
-
+        this.togglePopup.bind(this);
         console.log('This form was submitted with the data:');
         console.log(this.state);
     }
-    goBack(e)
+    /*goBack(e)
     {
         e.preventDefault();
         console.log("go Back");
-    }
+    }*/
     
     render() {
         return (
@@ -65,4 +85,4 @@ class Login extends Component
         );
     }
 }
-export default Login
+export default Login;
