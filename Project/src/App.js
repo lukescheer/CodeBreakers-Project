@@ -9,6 +9,7 @@ import Home from './pages/Home';
 import CreatePost from './pages/CreatePost';
 import Profile from './pages/Profile';
 import Settings from './pages/Settings';
+import Login from './pages/Login';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
@@ -94,9 +95,9 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/signup" component={SignUp} />
             <Route exact path="/createPost" component={CreatePost} />
-            { /*<Route exact path="/login" component={Login} />*/}
             <Route exact path="/me" component={Profile} />
             <Route exact path="/settings" component={Settings} />
+            <Route exact path="/login" component={Login} />
           </div>
 
         </div>
@@ -104,7 +105,7 @@ class App extends Component {
     );
   }
 }
-
+//<Route exact path="/login" component={Login} />
 
 
 

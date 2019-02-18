@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Popup from "reactjs.popup";
+//import Popup from "reactjs.popup";
 import { Redirect } from 'react-router-dom';
 //user login
 class Login extends Component
@@ -13,22 +13,30 @@ class Login extends Component
             password: '',
         };
         this.handleCheck = this.handleCheck.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.goBack = this.goBack.bind(this);
+    }
+
+    handleChange(e) {
+        let target = e.target;
+        let value = target.type === 'checkbox' ? target.checked : target.value;
+        let name = target.name;
+
+        this.setState({
+            [name]: value
+        });
     }
     handleCheck(e)
     {
-        //console.log("user inputted this data");
+        e.preventDefault();
+
+        console.log('This form was submitted with the data:');
         console.log(this.state);
-        noerror: 0;
-        if(noerror == 0)
-        {
-            Popup.alert('Password does not match username')
-        }
-        else
-        {
-            //log the user in
-            //ie switch user to homepage
-            return <Redirect to = '/target_homepage'/>
-        }
+    }
+    goBack(e)
+    {
+        e.preventDefault();
+        console.log("go Back");
     }
 
     render() {
@@ -49,8 +57,10 @@ class Login extends Component
                     <div className="FormField">
                         <button className="FormField__Button mr-20">Login</button>
                     </div>
-
                 </form>
+                <a href="#" onClick={this.goBack}>
+                Back
+                </a>
             </div>
         );
     }
