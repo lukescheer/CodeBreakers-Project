@@ -7,6 +7,8 @@ import Route from 'react-router-dom/Route';
 import SignUp from './pages/SignUp';
 import Home from './pages/Home';
 import CreatePost from './pages/CreatePost';
+import Profile from './pages/Profile';
+import Settings from './pages/Settings';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
@@ -93,6 +95,8 @@ class App extends Component {
             <Route exact path="/signup" component={SignUp} />
             <Route exact path="/createPost" component={CreatePost} />
             { /*<Route exact path="/login" component={Login} />*/}
+            <Route exact path="/me" component={Profile} />
+            <Route exact path="/settings" component={Settings} />
           </div>
 
         </div>
