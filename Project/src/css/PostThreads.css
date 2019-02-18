@@ -1,0 +1,55 @@
+.PostThread {
+   padding-top: 25px;
+   padding-left: 1%;
+}
+
+.taglist {
+   overflow-x: scroll;
+   overflow-y: hidden;
+   white-space: nowrap;
+
+   box-sizing: border-box;
+   position: relative;
+   top: 210px;
+   width: 400px;
+   height: 50px;
+   padding: 5px;
+   border: 1px solid black;
+}
+
+.post-contents {
+   box-sizing: border-box;
+   width: 1000px;
+   height: 300px;
+   padding: 5px;
+   border: 5px solid black;
+}
+
+.title {
+   position: relative;
+   left: -15px;
+   box-sizing: border-box;
+   width: 100px;
+   height: 25px;
+   padding: 5 px;
+   border: 1px solid black;
+}
+.author {
+   position: relative;
+   left: 124px;
+   box-sizing: border-box;
+   width: 100px;
+   height: 25px;
+   padding: 5 px;
+   border: 1px solid black;
+}
+
+.reply-contents {
+   position: relative;
+   top: 10px;
+   box-sizing: border-box;
+   width: 500px;
+   height: 300px;
+   padding: 5px;
+   border: 5px solid black;
+}
