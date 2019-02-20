@@ -18,26 +18,24 @@ import { Redirect } from 'react-router-dom';
   }*/
 class Login extends Component
 {
-    constructor()
+    constructor(props)
     {
-        super()
-        this.state = 
+        super(props)
+        this.state =
         {
             username: '',
             password: '',
             //showPopup = false,
         };
-        this.handleCheck = this.handleCheck.bind(this);
-        this.handleChange = this.handleChange.bind(this);
         //this.goBack = this.goBack.bind(this);
     }
-    togglePopup()
+    togglePopup = () =>
     {
         this.setState({
           showPopup: !this.state.showPopup
         });
       }
-    handleChange(e) {
+    handleChange = (e) => {
         let target = e.target;
         let value = target.type === 'checkbox' ? target.checked : target.value;
         let name = target.name;
@@ -46,7 +44,7 @@ class Login extends Component
             [name]: value
         });
     }
-    handleCheck(e)
+    handleCheck = (e) =>
     {
         e.preventDefault();
         this.togglePopup.bind(this);
@@ -62,9 +60,9 @@ class Login extends Component
     render() {
         return (
             <div className="Formcenter">
-                
+
                 <h1>Login</h1>
-                
+
                 <form onSubmit={this.handleCheck} className="FormFields">
                     <div className="FormField">
                         <label className="FormField__Lable" htmlFor="username">Username</label>

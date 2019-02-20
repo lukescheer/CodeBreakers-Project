@@ -1,0 +1,34 @@
+.form-wrapper {
+  padding-top: 25px;
+  padding-left: 5%;
+}
+
+.form-row{
+    margin-left: 0px !important; /* Align with header */
+}
+
+.form-inline {
+  width: 100%;
+}
+
+.form-group{
+  width: 90%;
+  padding-top: 10px;
+}
+
+.input-group {
+  width: 100%;
+}
+
+.form-control{
+  width: 100%;
+}
+
+span.input-group-addon{
+  width: 50px;
+}
+
+textarea {
+  resize: none !important;
+  height: 300px !important;
+}
