@@ -106,7 +106,7 @@ class PublicPosts extends Component {
             this.posts.map(info =>(
               <PostPreview title={info.title}
                            author={info.author}
-                           postLink={info.postLink}
+                           postLink={"/postthread"}
                            authorLink={info.authorLink} />
             ))
           }
