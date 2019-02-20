@@ -25,6 +25,7 @@ class App extends Component {
 
     this.state = {
       loggedIn: true,
+      /* More attributes of the user can be added here */
     }
 
   }
@@ -93,13 +94,38 @@ class App extends Component {
           { /* Path routing for links in navbar */ }
 
           <div className="router">
-            <Route exact path="/" component={Home} />
-            <Route exact path="/signup" component={SignUp} />
-            <Route exact path="/createPost" component={CreatePost} />
-            <Route exact path="/me" component={Profile} />
-            <Route exact path="/settings" component={Settings} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/postthread" component={PostThreads} />
+
+            {/* Pass loggedIn as a prop using this method vv */}
+            <Route
+              exact path="/"
+              render = {(props) => <Home {...props} state={this.state}/>}
+            />
+
+            <Route
+              exact path="/signup"
+              render = {(props) => <SignUp {...props} state={this.state}/>}
+            />
+
+            <Route
+							exact path="/createPost"
+							render = {(props) => <CreatePost {...props} state={this.state} />}
+						/>
+            <Route
+							exact path="/me"
+							render = {(props) => <Profile {...props} state={this.state} />}
+						/>
+            <Route
+							exact path="/settings"
+							render = {(props) => <Settings {...props} state={this.state} />}
+						/>
+            <Route
+							exact path="/login"
+							render = {(props) => <Login {...props} state={this.state} />}
+						/>
+            <Route
+							exact path="/postthread"
+							render = {(props) => <PostThreads {...props} state={this.state} />}
+						/>
           </div>
 
         </div>
@@ -107,8 +133,6 @@ class App extends Component {
     );
   }
 }
-//<Route exact path="/login" component={Login} />
-
 
 
 export default App;
