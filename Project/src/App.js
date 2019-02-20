@@ -100,6 +100,7 @@ class App extends Component {
               exact path="/"
               render = {(props) => <Home {...props} state={this.state}/>}
             />
+
             <Route
               exact path="/signup"
               render = {(props) => <SignUp {...props} state={this.state}/>}
@@ -125,7 +126,6 @@ class App extends Component {
 							exact path="/postthread"
 							render = {(props) => <PostThreads {...props} state={this.state} />}
 						/>
-
           </div>
 
         </div>
@@ -133,8 +133,6 @@ class App extends Component {
     );
   }
 }
-//<Route exact path="/login" component={Login} />
-
 
 
 export default App;
