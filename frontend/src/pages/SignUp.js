@@ -45,7 +45,7 @@ class SignUp extends Component {
     }
     handleSubmit(e) {
         e.preventDefault();
-        this.putDataToDB(this.state.username, this.state.email);
+        this.putDataToDB(this.state.username, this.state.email, this.state.password);
         //this.getDataFromDb();
         this.setState({userFail: true});
         console.log('This form was submitted with the data:');
