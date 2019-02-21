@@ -110,7 +110,7 @@ class PublicPosts extends Component {
               <PostPreview title={info.title}
                            author={info.author}
                            postLink={"/postthread"}
-                           authorLink={info.authorLink} />
+                           authorLink={info.authorLink}
                             key={info.title + info.author} />
             ))
           }

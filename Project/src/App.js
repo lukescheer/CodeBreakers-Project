@@ -24,7 +24,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      loggedIn: true,
+      loggedIn: false,
       /* More attributes of the user can be added here */
     }
 

@@ -5,9 +5,10 @@ const Schema = mongoose.Schema;
 // this will be our users's data structure 
 const UserSchema = new Schema(
   {
-    //passWordHash: String,
+    username: String,
     email: String, 
-    username: String
+    passWordHash: String
+    
     //created: { type: Date, default : () => new Date()},
   },
   { timestamps: true }

@@ -46,20 +46,20 @@ class SignUp extends Component {
     handleSubmit(e) {
         e.preventDefault();
 
-        this.putDataToDB(this.state.username, this.state.email);
+        this.putDataToDB(this.state.username, this.state.email, this.state.password);
         //this.getDataFromDb();
 
         console.log('This form was submitted with the data:');
         console.log(this.state);
     }
 
-    putDataToDB = (username, email) => {
+    putDataToDB = (username, email, password) => {
         console.log(username);
         console.log(email);
         axios.post("http://localhost:3001/api/putUser", {
           email: email,
-          username: username
-          //passWordHash: password,
+          username: username,
+          passWordHash: password
         });
       };
 
