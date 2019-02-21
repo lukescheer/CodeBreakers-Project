@@ -7,9 +7,8 @@ import {Col, Row, Nav} from 'react-bootstrap'
 class Profile extends Component {
     constructor(props){
       super(props);
-        const numPosts = 0;
       this.state = {  
-        numPosts: 0
+        numPosts: 1
       };
     }
     
@@ -19,7 +18,7 @@ class Profile extends Component {
                 <Row noGutters={true} style={{height:"150vh"}}>
                     <Col>
                         <div className="text-center">
-                            {"Your Posts: " + 0}
+                            {"Your Posts: " + this.state.numPosts}
                             
                         </div>
                         <PublicPosts />

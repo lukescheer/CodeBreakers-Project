@@ -16,8 +16,8 @@ class SignUp extends Component {
             email: '',
             username: '',
             password: "",
-            suggestions: []
-            //agreement: false
+            suggestions: [],
+            userFail: false
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -45,10 +45,9 @@ class SignUp extends Component {
     }
     handleSubmit(e) {
         e.preventDefault();
-
         this.putDataToDB(this.state.username, this.state.email);
         //this.getDataFromDb();
-
+        this.setState({userFail: true});
         console.log('This form was submitted with the data:');
         console.log(this.state);
     }
@@ -71,12 +70,18 @@ class SignUp extends Component {
 
 
     render() {
+        let inUse;
+        if (this.state.userFail) {
+            inUse = <text className="errorColor">THIS EMAIL IS ALREADY IN USE</text> 
+        }
+
         return (
             <div className="FormCenter">
                 
                 <h1>Signup Page</h1>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-                
+                {inUse}
                 <form onSubmit={this.handleSubmit} className="FormFields">
+                    
                     <div className="FormField">
                         <label className="FormField__Lable" htmlFor="email">E-Mail Address</label>
                         <input type="email" id="email" className="FormField__Input" placeholder="Enter Your Email" name="email" value={this.state.email} onChange={this.handleChange} />

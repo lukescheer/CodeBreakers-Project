@@ -15,7 +15,9 @@
   padding: 25px 40px;
   overflow: auto;
 }
-
+.errorColor {
+  color: #FF0000
+}
 .PageSwitcher {
   display: flex;
   justify-content: flex-end;

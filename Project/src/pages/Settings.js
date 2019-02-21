@@ -12,7 +12,9 @@ class Settings extends Component {
 
 
         this.state = {
-            email: '',
+
+            GivEmail: '',
+            GivUsername: '',
             username: '',
             password: "",
             suggestions: []
@@ -57,10 +59,10 @@ class Settings extends Component {
                 
                 <form onSubmit={this.handleSubmit} className="FormFields">
                     <div className="FormField">
-                        <label className="FormField__Lable" htmlFor="email">Email: </label>
+                        <label className="FormField__Lable" htmlFor="email">Email: {this.state.GivEmail}</label>
                     </div>
                     <div className="FormField">
-                        <label className="FormField__Lable" htmlFor="username">Username: </label>
+                        <label className="FormField__Lable" htmlFor="username">Username: {this.state.GivUsername}</label>
                     </div>
                     <div className="FormField">
                         <label className="FormField__Lable" htmlFor="username">Username</label>
