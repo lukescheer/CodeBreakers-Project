@@ -109,8 +109,8 @@ class PublicPosts extends Component {
             this.posts.map(info =>(
               <PostPreview title={info.title}
                            author={info.author}
-                           postLink={info.postLink}
-                           authorLink={info.authorLink}
+                           postLink={"/postthread"}
+                           authorLink={info.authorLink} />
                             key={info.title + info.author} />
             ))
           }
@@ -128,7 +128,7 @@ function PostPreview(props){
 
       <Row className="pt-2">
         <Col>
-          <a className="px-2" href={props.postLink}>{props.title}</a>
+          <a className="px-2" href={props.postLink}>{props.title} </a>
         </Col>
         <Col>
           { /* Oddly, text won't align without this wrapper */ }
