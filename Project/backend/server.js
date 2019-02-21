@@ -81,21 +81,21 @@ router.post("/putUser", (req, res) => {
     console.log("email cannot be blank")
     return res.send({
       success: false,
-      message: 'Error: Email cannot be blank.'
+      //message: 'Error: Email cannot be blank.'
     });
   }
   if (!username) {
     console.log("username cannot be blank")
     return res.send({
       success: false,
-      message: 'Error: Username cannot be blank.'
+      //message: 'Error: Username cannot be blank.'
     });
   }
   if (!passWordHash) {
     console.log("password cannot be blank")
     return res.send({
       success: false,
-      message: 'Error: Password cannot be blank.'
+      //message: 'Error: Password cannot be blank.'
     });
   }
 
@@ -107,13 +107,13 @@ router.post("/putUser", (req, res) => {
       console.log("server error occurred")
       return res.send({
         success: false,
-        message: 'Error: Server error'
+        //message: 'Error: Server error'
       });
     } else if (previousUsers.length > 0) {
       console.log("email already exists")
       return res.send({
         success: false,
-        message: 'Error: Account with email already exist.'
+        //message: 'Error: Account with email already exist.'
       });
     }
     //check if account with username already exists
@@ -124,13 +124,13 @@ router.post("/putUser", (req, res) => {
         console.log("a server error occurred")
         return res.send({
           success: false,
-          message: 'Error: Server error'
+          //message: 'Error: Server error'
         });
       } else if (previousUsers.length > 0) {
         console.log("username already exists")
         return res.send({
           success: false,
-          message: 'Error: Account with username already exist.'
+          //message: 'Error: Account with username already exist.'
         });
       }
       let user = new User();

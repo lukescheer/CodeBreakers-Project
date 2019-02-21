@@ -50,6 +50,8 @@ class Login extends Component
         this.togglePopup.bind(this);
         console.log('This form was submitted with the data:');
         console.log(this.state);
+
+        
     }
     /*goBack(e)
     {
