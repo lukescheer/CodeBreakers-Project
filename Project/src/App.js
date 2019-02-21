@@ -22,9 +22,9 @@ class App extends Component {
 
   constructor(props){
     super(props);
-
+    //this.signUpHandle = this.signUpHandle.bind(this)
     this.state = {
-      loggedIn: true,
+      loggedIn: false,
       /* More attributes of the user can be added here */
     }
 
@@ -33,11 +33,13 @@ class App extends Component {
   signUpHandle = () => {
     this.setState({loggedIn:true})
   }
-
+  
   render() {
 
     // Change Log In to Log Out when user is signed in,
     // Do not offer signed-in users to Sign Up
+    
+    //return <Login signUpHandle = {this.signUpHandle} />
 
     var loginOpt;
 
