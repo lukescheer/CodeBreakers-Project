@@ -73,35 +73,85 @@ router.delete("/deleteUser", (req, res) => {
 // this is our create method
 // this method adds new data in our database
 router.post("/putUser", (req, res) => {
-
-  let user = new User();
-  console.log(req.body)
-  //const email = "email@gmail.com";
-  //const username = "myUserName";
   
-  const {email, username} = req.body;
-  //const {email, username} = req.body;
-    
-  /*
-  if (!passWordHash || !email || !username) {
-    return res.json({
+  const {email, username, passWordHash} = req.body;
+  console.log(req.body)
+  //check that fields are not blank
+  if (!email) {
+    console.log("email cannot be blank")
+    return res.send({
       success: false,
-      error: "INVALID INPUTS"
+      //message: 'Error: Email cannot be blank.'
     });
-  } */
-  //user.passWordHash = passWordHash;
-  user.email = email;
-  user.username = username;
-  user.save(err => {
-    if (err){
-    console.log("hey, an error occured:");
-    console.log(err);
-    return res.json({ success: false, error: err });
+  }
+  if (!username) {
+    console.log("username cannot be blank")
+    return res.send({
+      success: false,
+      //message: 'Error: Username cannot be blank.'
+    });
+  }
+  if (!passWordHash) {
+    console.log("password cannot be blank")
+    return res.send({
+      success: false,
+      //message: 'Error: Password cannot be blank.'
+    });
+  }
+
+  //check if account with email already exists
+  User.find({
+    email: email
+  }, (err, previousUsers) => {
+    if (err) {
+      console.log("server error occurred")
+      return res.send({
+        success: false,
+        //message: 'Error: Server error'
+      });
+    } else if (previousUsers.length > 0) {
+      console.log("email already exists")
+      return res.send({
+        success: false,
+        //message: 'Error: Account with email already exist.'
+      });
     }
-    console.log("this should be the email:");
-    console.log(user.email);
-    return res.json({ success: true });
+    //check if account with username already exists
+    User.find({
+      username: username
+    }, (err, previousUsers) => {
+      if (err) {
+        console.log("a server error occurred")
+        return res.send({
+          success: false,
+          //message: 'Error: Server error'
+        });
+      } else if (previousUsers.length > 0) {
+        console.log("username already exists")
+        return res.send({
+          success: false,
+          //message: 'Error: Account with username already exist.'
+        });
+      }
+      let user = new User();
+
+      user.email = email;
+      user.username = username;
+      user.passWordHash = passWordHash;
+      user.save(err => {
+        if (err){
+        console.log("hey, an error occured:");
+        console.log(err);
+        return res.json({ success: false, error: err });
+        }
+        console.log("this should be the email:");
+        console.log(user.email);
+        return res.json({ success: true });
+      });
   });
+  
+  });
+  
 });
 
 // append /api for our http requests

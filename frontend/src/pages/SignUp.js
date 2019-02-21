@@ -52,13 +52,13 @@ class SignUp extends Component {
         console.log(this.state);
     }
 
-    putDataToDB = (username, email) => {
+    putDataToDB = (username, email, password) => {
         console.log(username);
         console.log(email);
         axios.post("http://localhost:3001/api/putUser", {
           email: email,
-          username: username
-          //passWordHash: password,
+          username: username,
+          passWordHash: password
         });
       };
 
