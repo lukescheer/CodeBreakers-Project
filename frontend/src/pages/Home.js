@@ -79,11 +79,11 @@ class PublicPosts extends Component {
     constructor(props){
       super(props);
 
-      this.loadPosts();
+      this.loadMockPosts();
     }
 
     /* TODO get from DB instead of static example */
-    loadPosts() {
+    loadMockPosts() {
 
       this.posts = [];
 
@@ -107,6 +107,18 @@ class PublicPosts extends Component {
         }
       )
 
+    }
+
+    // Loading posts from tDB instead of static examples for the demo
+
+    loadPosts(){
+      fetch("http://localhost:3001/api/getPosts")
+        .then(
+          posts => posts.json()
+        )
+        .then(
+          posts => this.posts = posts // wherever it will be located in the response
+        )
     }
 
     render(){
@@ -136,7 +148,7 @@ function PostPreview(props){
     <div className="post-preview">
 
       <Row className="pt-2">
-        <Col className="post-title" lg="2">
+        <Col className="post-title" lg="6">
           <a className="px-2" href={props.postLink}>{props.title} </a>
         </Col>
         <Col>
