@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 
 let postSchema = new mongoose.Schema({
-   text: String,
-   author: String,
-   github: String,
+   title: String,
+   link: String,
+   description: String,
    tags: Array,
    replies: Array
 })

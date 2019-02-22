@@ -3,8 +3,6 @@ import {Form, Button} from 'react-bootstrap';
 import '../css/createPost.css'
 import axios from "axios";
 
-import axios from "axios";
-
 /*
   Apparently unnecessary
 */
@@ -35,7 +33,6 @@ function randomPostID(){
 class PostForm extends Component {
     constructor(props){
       super(props);
-      this.state = {title: '', body: '', link:''};
 
       this.handleInputChange = this.handleInputChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -80,17 +77,17 @@ class PostForm extends Component {
     handleSubmit(event){
       console.log("Submitted form with data: ");
       console.log(this.state);
-      this.sendPostToDatabase();
+      this.sendPostToDatabase(this.state.formTitle, this.state.formLink, this.state.formDescription, this.state.tags);
 
       event.preventDefault(); // TODO should redirect to post after posting this
     }
 
-    sendPostToDatabase(){
+    sendPostToDatabase(Title, Link, Description, Tags){
       axios.post("http://localhost:3001/api/createPost", {
-        "formTitle": this.state.formTitle,
-        "formLink": this.state.formLink,
-        "formDescription": this.state.formDescription,
-        "tags": this.state.tags,
+        title: Title,
+        link: Link,
+        description: Description,
+        tags: Tags,
       });
     }
 

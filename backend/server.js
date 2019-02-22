@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const express = require("express");
 const logger = require("morgan");
 const User = require("./user");
+const Post = require("./post")
 const cors = require("cors")
 
 const API_PORT = 3001;
@@ -216,16 +217,16 @@ router.post("/putUser", (req, res) => {
   
 });
 
-router.post("/putPost", (req, res) => {
+router.post("/createPost", (req, res) => {
 
     let post = new Post();
     console.log(req.body)
     
-    const {text, author, github, tags} = req.body;
+    const {title, link, description, tags} = req.body;
     
-    post.text = text;
-    post.author = author;
-    post.github = github;
+    post.title = title;
+    post.link = link;
+    post.description = description;
     post.tags = tags;
     post.replies = [];
     post.save(err => {
@@ -234,8 +235,8 @@ router.post("/putPost", (req, res) => {
       console.log(err);
       return res.json({ success: false, error: err });
       }
-      console.log("this should be the email:");
-      console.log(post.author);
+      console.log("this should be the title:");
+      console.log(post.title);
       return res.json({ success: true });
     });
 });
