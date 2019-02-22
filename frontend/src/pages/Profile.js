@@ -8,7 +8,7 @@ class Profile extends Component {
     constructor(props){
       super(props);
       this.state = {  
-        numPosts: 1
+        numPosts: 50
       };
     }
     
