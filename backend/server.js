@@ -210,6 +210,30 @@ router.post("/putUser", (req, res) => {
   
 });
 
+router.post("/putPost", (req, res) => {
+
+    let post = new Post();
+    console.log(req.body)
+    
+    const {text, author, github, tags} = req.body;
+    
+    post.text = text;
+    post.author = author;
+    post.github = github;
+    post.tags = tags;
+    post.replies = [];
+    post.save(err => {
+      if (err){
+      console.log("hey, an error occured:");
+      console.log(err);
+      return res.json({ success: false, error: err });
+      }
+      console.log("this should be the email:");
+      console.log(post.author);
+      return res.json({ success: true });
+    });
+});
+
 // append /api for our http requests
 app.use("/api", router);
 
