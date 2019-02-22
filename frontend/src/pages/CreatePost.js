@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {Form, Button} from 'react-bootstrap';
 import '../css/createPost.css'
 
+import axios from "axios";
+
 /*
   Apparently unnecessary
 */
@@ -75,9 +77,22 @@ class PostForm extends Component {
     }
 
     handleSubmit(event){
+      console.log("Submitted form with data: ");
       console.log(this.state);
-      event.preventDefault();
+      this.sendPostToDatabase();
+
+      event.preventDefault(); // TODO should redirect to post after posting this
     }
+
+    sendPostToDatabase(){
+      axios.post("http://localhost:3001/api/createPost", {
+        "formTitle": this.state.formTitle,
+        "formLink": this.state.formLink,
+        "formDescription": this.state.formDescription,
+        "tags": this.state.tags,
+      });
+    }
+
 
     render() {
       return (
