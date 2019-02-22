@@ -24,7 +24,7 @@ class App extends Component {
     super(props);
     //this.signUpHandle = this.signUpHandle.bind(this)
     this.state = {
-      loggedIn: false,
+      loggedIn: true,
       /* More attributes of the user can be added here */
     }
 
