@@ -34,6 +34,12 @@
   display: block;
 }
 
+.post-title {
+    word-wrap: break-word;
+    max-width: 70% !important;
+    overflow: hidden;
+}
+
 .scroll{
 
 }
