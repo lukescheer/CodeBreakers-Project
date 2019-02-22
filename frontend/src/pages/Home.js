@@ -24,7 +24,7 @@ class Home extends Component {
     return (
 
 
-      <div>
+      <div className="homeRoot">
         <Row noGutters={true} style={{height:"90vh"}}>
 
           <Col>
@@ -92,11 +92,20 @@ class PublicPosts extends Component {
           {
             "title": "Title # " + i,
             "author": "Author # " + i,
-            "postLink": "post" + i,
+            "postLink": "/postthread",
             "authorLink": "author" + i
           }
         )
       }
+
+      this.posts.push(
+        {
+          "title": "This is a very very very very very very long title",
+          "author": "some guy",
+          "postLink": "/postthread",
+          "authorLink": "/someguy",
+        }
+      )
 
     }
 
@@ -127,7 +136,7 @@ function PostPreview(props){
     <div className="post-preview">
 
       <Row className="pt-2">
-        <Col>
+        <Col className="post-title" lg="2">
           <a className="px-2" href={props.postLink}>{props.title} </a>
         </Col>
         <Col>

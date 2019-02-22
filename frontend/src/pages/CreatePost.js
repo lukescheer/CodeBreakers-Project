@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {Form, Button} from 'react-bootstrap';
 import '../css/createPost.css'
 
+import axios from "axios";
+
 /*
   Apparently unnecessary
 */
@@ -38,16 +40,59 @@ class PostForm extends Component {
       this.handleSubmit = this.handleSubmit.bind(this);
 
       this.tags = ["C", "Python", "JavaScript", "Java", "Other Tags"];
+
+      this.state = {
+          formTitle: '',
+          formLink: '',
+          formDescription: "",
+          tags: []
+          //agreement: false
+      };
     }
 
     handleInputChange(event){
       const target = event.target;
+      const name = target.id;
+      const value = target.type === 'checkbox' ? target.checked : target.value;
+
+      if (target.type === 'checkbox'){
+        if (target.checked){
+          this.state.tags.push(name);
+        }
+        else{
+          var index = this.state.tags.indexOf(name);
+
+          if (index > -1){
+            this.state.tags.splice(index, 1);
+          }
+        }
+      }
+
+      else{
+        this.setState({
+          [name]: value
+        });
+      }
 
     }
 
     handleSubmit(event){
+      console.log("Submitted form with data: ");
+      console.log(this.state);
+      this.sendPostToDatabase();
 
+      event.preventDefault(); // TODO should redirect to post after posting this
     }
+
+    sendPostToDatabase(){
+      axios.post("http://localhost:3001/api/createPost", {
+        "formTitle": this.state.formTitle,
+        "formLink": this.state.formLink,
+        "formDescription": this.state.formDescription,
+        "tags": this.state.tags,
+      });
+    }
+
 
     render() {
       return (
@@ -57,7 +102,9 @@ class PostForm extends Component {
           Create a New Post
           </h3>
 
-          <Form>
+          <Form
+          onSubmit={e => this.handleSubmit(e)}
+          onChange={this.handleInputChange}>
             <Form.Row>
               <Form.Group controlId="formTitle">
                 <Form.Label>Title</Form.Label>
@@ -79,7 +126,7 @@ class PostForm extends Component {
 
                 { /* Pull checklist values from predefined array */
                   this.tags.map(name => (
-                    <Form.Check inline label={name} type="checkbox" id={`inline-${name}`}/>
+                    <Form.Check inline label={name} type="checkbox" id={`${name}`}/>
                   ))
                 }
 
@@ -87,7 +134,7 @@ class PostForm extends Component {
             </Form.Row>
 
             <Form.Row>
-              <Form.Group controlId="formTitle">
+              <Form.Group controlId="formDescription">
                 <Form.Label>Description</Form.Label>
                 <Form.Control as="textarea" placeholder="Provide as many details as necessary" />
               </Form.Group>
