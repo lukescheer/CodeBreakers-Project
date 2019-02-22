@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from "axios";
 //import Popup from "reactjs.popup";
 import { Redirect } from 'react-router-dom';
 //import App from './App.js';
@@ -49,6 +50,13 @@ class Login extends Component
             //console.log(this.state.fail);
         }
     }
+
+    checkDB = (username, password) => {
+        axios.post("http://localhost:3001/api/login", {
+          username: username,
+          passWordHash: password
+        });
+      };
     /*goBack(e)
     {
         e.preventDefault();
