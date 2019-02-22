@@ -192,7 +192,8 @@ router.post("/putUser", (req, res) => {
       } else if (previousUsers.length > 0) {
         console.log("username already exists")
         return res.send({
-          success: false,
+          userSuccess: false,
+          emailSuccess: true
           //message: 'Error: Account with username already exist.'
         });
       }
@@ -209,7 +210,10 @@ router.post("/putUser", (req, res) => {
         }
         console.log("this should be the email:");
         console.log(user.email);
-        return res.send({ success: true });
+        return res.send({
+          emailSuccess: true,
+          userSuccess: true, 
+          success: true });
       });
   });
   
