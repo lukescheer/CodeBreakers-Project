@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Form, Button} from 'react-bootstrap';
 import '../css/createPost.css'
+import axios from "axios";
 
 /*
   Apparently unnecessary
@@ -41,12 +42,26 @@ class PostForm extends Component {
     }
 
     handleInputChange(event){
-      const target = event.target;
+      //const target = event.target;
+      let target = event.target;
+        let value = target.type === 'checkbox' ? target.checked : target.value;
+        let name = target.name;
 
+        this.setState({
+            [name]: value,
+        });
     }
 
     handleSubmit(event){
-
+      /*axios.post("http://localhost:3001/api/putPost", {
+        
+      })*/
+      event.preventDefault();
+      console.log(this.state.title);
+      console.log(this.state.body);
+      console.log(this.state.link);
+      console.log("PRINTED");
+      alert('HOLLA');
     }
 
     render() {
@@ -61,14 +76,14 @@ class PostForm extends Component {
             <Form.Row>
               <Form.Group controlId="formTitle">
                 <Form.Label>Title</Form.Label>
-                <Form.Control type="text" placeholder="An Interesting Title" />
+                <Form.Control type="text" placeholder="An Interesting Title"/>
               </Form.Group>
             </Form.Row>
 
             <Form.Row>
               <Form.Group controlId="formLink">
                 <Form.Label>Link to Code</Form.Label>
-                <Form.Control type="text" placeholder="Github Link" />
+                <Form.Control type="text" placeholder="Github Link"/>
               </Form.Group>
             </Form.Row>
 
@@ -89,7 +104,7 @@ class PostForm extends Component {
             <Form.Row>
               <Form.Group controlId="formTitle">
                 <Form.Label>Description</Form.Label>
-                <Form.Control as="textarea" placeholder="Provide as many details as necessary" />
+                <Form.Control as="textarea" placeholder="Provide as many details as necessary"/>
               </Form.Group>
             </Form.Row>
 
