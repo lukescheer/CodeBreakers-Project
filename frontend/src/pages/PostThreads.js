@@ -35,15 +35,15 @@ class PostThread extends Component {
 
    constructor(props){
       super(props);
-      this.state = {reply: ''};
+      //this.state = {reply: ''};
 
       this.handleInputChange = this.handleInputChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
 
-      //this.tags = ["C", "Python", "JavaScript", "Java", "Other Tags"];
+      this.replyList = ["ReplyText1", "ReplyText2", "ReplyText3"]; 
 
       this.state = {
-          formReply: ""
+          formReply: ''
           //agreement: false
       };
     }
@@ -63,8 +63,12 @@ class PostThread extends Component {
       console.log("Submitted form with data: ");
       console.log(this.state);
       //this.sendPostToDatabase();
-      
-      //document.getElementById("addReply").value("");
+
+      //console.log(this.replyList);
+      //console.log(document.getElementById("formReply").value);
+      this.replyList.push(String(document.getElementById("formReply").value));
+      //console.log(this.replyList);
+      this.forceUpdate();
       event.preventDefault(); // TODO should redirect to post after posting this
     }
     
@@ -126,7 +130,7 @@ class PostThread extends Component {
                
                <Row>
                   <div >
-                     {getReplies.call().map(name => (
+                     {this.replyList.map(name => (
                         <div className="reply-contents"> {name} </div>
                      ))}
                      
@@ -137,7 +141,6 @@ class PostThread extends Component {
                   onSubmit={event => this.handleSubmit(event)}
                   onChange={this.handleInputChange}>
                   <Form.Row>
-
                      <Form.Group className="reply-maker" controlId="formReply">
                         <Form.Label>Add a Reply:</Form.Label>
                         <Form.Control as="textarea" placeholder="Add a Reply" />
