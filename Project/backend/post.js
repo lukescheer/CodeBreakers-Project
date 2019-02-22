@@ -4,6 +4,7 @@ let postSchema = new mongoose.Schema({
    text: String,
    author: String,
    github: String,
+   tags: Array,
    replies: Array
 })
 
