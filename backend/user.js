@@ -14,5 +14,8 @@ const UserSchema = new Schema(
   { timestamps: true }
 );
 
+UserSchema.methods.validPassword = function(password) {
+  return password == this.passWordHash;
+};
 // export the new Schema so we could modify it using Node.js
 module.exports = mongoose.model("User", UserSchema);

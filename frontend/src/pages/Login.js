@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from "axios";
 //import Popup from "reactjs.popup";
 import { Redirect } from 'react-router-dom';
 //user login
@@ -51,8 +52,15 @@ class Login extends Component
         console.log('This form was submitted with the data:');
         console.log(this.state);
 
-        
+        this.checkDB(this.state.username, this.state.password);
     }
+
+    checkDB = (username, password) => {
+        axios.post("http://localhost:3001/api/login", {
+          username: username,
+          passWordHash: password
+        });
+      };
     /*goBack(e)
     {
         e.preventDefault();

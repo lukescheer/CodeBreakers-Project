@@ -47,19 +47,31 @@ class SignUp extends Component {
         e.preventDefault();
         this.putDataToDB(this.state.username, this.state.email, this.state.password);
         //this.getDataFromDb();
+        console.log(this.state.userFail);
         this.setState({userFail: true});
         console.log('This form was submitted with the data:');
+        console.log(this.state.userFail);
         console.log(this.state);
     }
 
     putDataToDB = (username, email, password) => {
         console.log(username);
         console.log(email);
+        console.log(this.state.userFail);
         axios.post("http://localhost:3001/api/putUser", {
           email: email,
           username: username,
           passWordHash: password
-        });
+        })
+        .then(response => {
+            console.log(response.data);
+            console.log(response.data.success);
+            this.setState(() =>({userFail: response.data.success
+            }), () => {  //callback: code executes after the state is set
+                console.log(this.state.userFail); //logs updated userFail value
+            });
+          });
+        console.log(this.state.userFail);  //logs userFail value before update
       };
 
       getDataFromDb = () => {
@@ -71,8 +83,8 @@ class SignUp extends Component {
 
     render() {
         let inUse;
-        if (this.state.userFail) {
-            inUse = <text className="errorColor">THIS EMAIL IS ALREADY IN USE</text> 
+        if (!this.state.userFail) {
+            inUse = <text className="errorColor">THIS USERNAME IS ALREADY IN USE</text> 
         }
 
         return (
