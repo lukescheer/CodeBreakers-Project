@@ -131,19 +131,22 @@ router.delete("/deleteUser", (req, res) => {
 router.post("/putUser", (req, res) => {
   
   const {email, username, passWordHash} = req.body;
+
   console.log(req.body)
   //check that fields are not blank
   if (!email) {
     console.log("email cannot be blank")
     return res.send({
-      success: false,
+      emailSuccess: false,
+      userSuccess: true,
       message: 'Error: Email cannot be blank.'
     });
   }
   if (!username) {
     console.log("username cannot be blank")
     return res.send({
-      success: false,
+      emailSuccess: true,
+      userSuccess: false
       //message: 'Error: Username cannot be blank.'
     });
   }
@@ -169,6 +172,8 @@ router.post("/putUser", (req, res) => {
       console.log("email already exists")
       return res.send({
         success: false,
+        emailSuccess: false,
+        userSuccess: true
         //message: 'Error: Account with email already exist.'
       });
     }
@@ -180,6 +185,7 @@ router.post("/putUser", (req, res) => {
         console.log("a server error occurred")
         return res.send({
           success: false,
+
           //message: 'Error: Server error'
         });
       } else if (previousUsers.length > 0) {
