@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import zxcvbn from 'zxcvbn';
+import {Form, Button} from 'react-bootstrap';
+import '../css/createPost.css'
+
 
 // Sign up page
 
@@ -17,9 +20,11 @@ class SignUp extends Component {
             username: '',
             password: "",
             suggestions: [],
-            userFail: false
+            emailSucc: true,
+            userSucc: true,
+            
         };
-
+        
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -47,7 +52,7 @@ class SignUp extends Component {
         e.preventDefault();
         this.putDataToDB(this.state.username, this.state.email, this.state.password);
         //this.getDataFromDb();
-        this.setState({userFail: true});
+        this.setState({userSucc: false, emailSucc: false});
         console.log('This form was submitted with the data:');
         console.log(this.state);
     }
@@ -71,21 +76,26 @@ class SignUp extends Component {
 
     render() {
         let inUse;
-        if (this.state.userFail) {
+        let inUse2;
+        if (!this.state.emailSucc) {
             inUse = <text className="errorColor">THIS EMAIL IS ALREADY IN USE</text> 
+        }
+        if (!this.state.userSucc) {
+            inUse2 = <text className="errorColor">THIS USERNAME IS ALREADY IN USE</text> 
         }
 
         return (
             <div className="FormCenter">
                 
                 <h1>Signup Page</h1>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-                {inUse}
+                
                 <form onSubmit={this.handleSubmit} className="FormFields">
-                    
+                    {inUse}
                     <div className="FormField">
                         <label className="FormField__Lable" htmlFor="email">E-Mail Address</label>
                         <input type="email" id="email" className="FormField__Input" placeholder="Enter Your Email" name="email" value={this.state.email} onChange={this.handleChange} />
                     </div>
+                    {inUse2}
                     <div className="FormField">
                         <label className="FormField__Lable" htmlFor="username">Username</label>
                         <input type="username" id="username" className="FormField__Input" placeholder="Enter Your Username" name="username" value={this.state.username} onChange={this.handleChange} />
