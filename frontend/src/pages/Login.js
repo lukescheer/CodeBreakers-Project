@@ -1,57 +1,53 @@
 import React, { Component } from 'react';
 //import Popup from "reactjs.popup";
 import { Redirect } from 'react-router-dom';
+//import App from './App.js';
+//import Cookies from 'js-cookie';
+import SignUp from './SignUp';
 //user login
-/*class Popup extends React.Component
-{
-    render()
-    {
-      return (
-        <div className='popup'>
-          <div className='popup_inner'>
-            <h1>{this.props.text}</h1>
-          <button onClick={this.props.closePopup}>close</button>
-          </div>
-        </div>
-      );
-    }
-  }*/
+
 class Login extends Component
 {
     constructor(props)
     {
         super(props)
+
         this.state =
         {
             username: '',
             password: '',
-            //showPopup = false,
+            fail: false
         };
         //this.goBack = this.goBack.bind(this);
     }
-    togglePopup = () =>
-    {
-        this.setState({
-          showPopup: !this.state.showPopup
-        });
-      }
     handleChange = (e) => {
         let target = e.target;
         let value = target.type === 'checkbox' ? target.checked : target.value;
         let name = target.name;
 
         this.setState({
-            [name]: value
+            [name]: value,
         });
     }
     handleCheck = (e) =>
     {
         e.preventDefault();
-        this.togglePopup.bind(this);
+        //this.togglePopup.bind(this);
+        //signUpHandle();
+        //this.props.signUpHandler();
         console.log('This form was submitted with the data:');
         console.log(this.state);
 
-        
+        if(this.state.username == "Avik" && this.state.password  == "Singh")
+        {
+            console.log('logged in!');
+        }
+        else
+        {
+            this.setState({fail: true});
+            console.log('Try again');
+            //console.log(this.state.fail);
+        }
     }
     /*goBack(e)
     {
@@ -60,11 +56,22 @@ class Login extends Component
     }*/
     
     render() {
+        
+        let message;
+        if(this.state.fail)
+        {
+            message =  <text className ="errorColor">These usernames and passwords are not valid</text> 
+        }
+        else
+        {
+            message =  <text> Please enter a valid username and email</text> 
+        }
         return (
+            
             <div className="Formcenter">
 
                 <h1>Login</h1>
-
+                {message}
                 <form onSubmit={this.handleCheck} className="FormFields">
                     <div className="FormField">
                         <label className="FormField__Lable" htmlFor="username">Username</label>
