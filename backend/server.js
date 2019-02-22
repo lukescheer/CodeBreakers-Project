@@ -60,14 +60,16 @@ router.post("/login", (req, res) => {
   if (!username) {
     console.log("username cannot be blank")
     return res.send({
-      success: false,
+      userSuccess: false,
+      passSuccess: false
       //message: 'Error: Username cannot be blank.'
     });
   }
   if (!passWordHash) {
     console.log("password cannot be blank")
     return res.send({
-      success: false,
+      userSuccess: true,
+      passSuccess: false,
       //message: 'Error: Password cannot be blank.'
     });
   }
@@ -85,24 +87,27 @@ router.post("/login", (req, res) => {
     } if (previousUsers.length != 1) {
       console.log("invalid username")
       return res.send({
-        success: false,
+        userSuccess: false,
+        passSuccess: false
         //message: 'Error: Account with email already exist.'
       });
     }
     const user = previousUsers[0];
-      if (!user.validPassword(password)) {
+      if (!user.validPassword(passWordHash)) {
         console.log("invalid password")
         return res.send({
-          success: false,
+          userSuccess: true,
+          passSuccess: false,
           message: 'Error: Invalid password'
         });
       }
       //TODO: create new user session
       console.log("valid sign in")
       return res.send({
-        success: true,
+        userSuccess: true,
+        passSuccess: true,
         message: 'Valid sign in',
-        token: doc._id
+        //token: doc._id
       });
   });
 });

@@ -17,7 +17,9 @@ class Login extends Component
         {
             username: '',
             password: '',
-            fail: false
+            userSucc: false,
+            passSucc: false,
+            enteredState: false
         };
         //this.goBack = this.goBack.bind(this);
     }
@@ -38,6 +40,8 @@ class Login extends Component
         //this.props.signUpHandler();
         console.log('This form was submitted with the data:');
         console.log(this.state);
+        this.setState({enteredState: true});
+        this.checkDB(this.state.username, this.state.password);
 
         if(this.state.username == "Avik" && this.state.password  == "Singh")
         {
@@ -45,7 +49,7 @@ class Login extends Component
         }
         else
         {
-            this.setState({fail: true});
+            //this.setState({fail: true});
             console.log('Try again');
             //console.log(this.state.fail);
         }
@@ -55,8 +59,17 @@ class Login extends Component
         axios.post("http://localhost:3001/api/login", {
           username: username,
           passWordHash: password
-        });
-      };
+        })
+        .then(response => {
+            console.log(response.data);
+            //console.log("userSuccess:")
+            //console.log(response.data.userSuccess);
+            this.setState(() =>({
+                userSucc: response.data.userSuccess,
+                passSucc: response.data.passSuccess
+            })); 
+      });
+    };
     /*goBack(e)
     {
         e.preventDefault();
@@ -66,13 +79,23 @@ class Login extends Component
     render() {
         
         let message;
-        if(this.state.fail)
+        if(this.state.userSucc && this.state.passSucc && this.state.enteredState)
         {
-            message =  <text className ="errorColor">These usernames and passwords are not valid</text> 
+            message =  <text>You have successfully logged in</text> 
         }
-        else
+        else if(this.state.userSucc)
         {
-            message =  <text> Please enter a valid username and email</text> 
+            message =  <text className ="errorColor"> The password is incorrect.</text> 
+        }
+        else if(this.state.passSucc){
+            message =  <text className ="errorColor"> The username is incorrect.</text>
+        }
+        else if(this.state.enteredState){
+            message =  <text className ="errorColor"> The username is incorrect.</text>
+        }
+        else{
+            message = <text>Please enter your username and password.</text>
+
         }
         return (
             
