@@ -1,4 +1,5 @@
 
 # CODEBREAKERS
 
-I don't know what to put in this readme, so I didn't put anything.
+A React based website. 
+This is an ongoing web development group project for the Software Engineering course (CS 307) at Purdue University.
